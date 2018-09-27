@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
+import Modal from '../../components/UI/Modal/Modal';
 import Burger from '../../components/Burger/Burger';
-import BuildControls from '../../components/Burger/BuildControls/BuildControls';
-import Modal from '../../components/UI/Modal/Modal'
 import OrderSummary from '../../components/Burger/OrderSummary/OrderSummary'
+import BuildControls from '../../components/Burger/BuildControls/BuildControls';
 
 const INGREDIENT_PRICES = {
   salad: 0.50,
@@ -68,9 +68,7 @@ class BurgerBuilder extends Component {
   };
 
   render() {
-    const disabledInfo = {
-      ...this.state.ingredients
-    };
+    const disabledInfo = {...this.state.ingredients};
     for (let key in disabledInfo) {
       disabledInfo[key] = disabledInfo[key] < 1;
     }

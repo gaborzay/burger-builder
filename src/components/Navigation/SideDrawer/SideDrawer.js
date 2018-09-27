@@ -8,6 +8,7 @@ import classes from './SideDrawer.scss';
 const sideDrawer = (props) => {
   let attachedClasses = [classes.SideDrawer];
   props.open ? attachedClasses.push(classes.Open) : attachedClasses.push(classes.Close);
+
   return (
     <React.Fragment>
       <Backdrop clicked={props.closed} show={props.open}/>

@@ -17,18 +17,18 @@ $white: #ffffff;
     height: 11%;
     margin-bottom: 32px;
   }
+
+  &.Open {
+    transform: translateX(0);
+  }
+
+  &.Close {
+    transform: translateX(-100%);
+  }
 }
 
 @media only screen and (min-width: 500px) {
   .SideDrawer {
     display: none;
   }
-}
-
-.Open {
-  transform: translateX(0);
-}
-
-.Close {
-  transform: translateX(-100%);
 }

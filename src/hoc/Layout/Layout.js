@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 //  a reference for the old way export adjacent elements
 // import Aux from '../../hoc/Aux';
-import Toolbar from '../Navigation/Toolbar/Toolbar';
-import SideDrawer from '../Navigation/SideDrawer/SideDrawer';
+import Toolbar from '../../components/Navigation/Toolbar/Toolbar';
+import SideDrawer from '../../components/Navigation/SideDrawer/SideDrawer';
 import classes from './Layout.scss';
 
 class Layout extends Component {
