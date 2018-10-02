@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
-
-import Backdrop from '../Backdrop/Backdrop';
 import classes from './Modal.scss';
+import Backdrop from '../Backdrop/Backdrop';
 
 class Modal extends Component {
   shouldComponentUpdate(nextProps, nextState) {
