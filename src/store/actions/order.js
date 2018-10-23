@@ -1,7 +1,7 @@
 import * as actionTypes from './actionTypes';
 import axios from '../../axios-orders';
 
-const INGREDIENTS_URL = '/orders.json';
+const ORDERS_URL = '/orders.json';
 
 export const purchaseBurgerSuccess = (id, orderData) => {
   return {
@@ -26,7 +26,7 @@ export const purchaseBurgerStart = () => {
 
 export const purchaseBurger = (orderData, token) => {
   return dispatch => {
-    const url = `${INGREDIENTS_URL}?auth=${token}`;
+    const url = `${ORDERS_URL}?auth=${token}`;
     dispatch(purchaseBurgerStart());
     axios.post(url, orderData)
       .then(response => {
@@ -44,7 +44,7 @@ export const purchaseInit = () => {
   }
 };
 
-export const fetchOrdersStart = (orders) => {
+export const fetchOrdersStart = () => {
   return {
     type: actionTypes.FETCH_ORDERS_START
   };
@@ -64,9 +64,10 @@ export const fetchOrdersFail = (error) => {
   };
 };
 
-export const fetchOrders = (token) => {
+export const fetchOrders = (token, userId) => {
   return dispatch => {
-    const url = `${INGREDIENTS_URL}?auth=${token}`;
+    const queryParams = `?auth=${token}&orderBy="userId"&equalTo="${userId}"`;
+    const url = `${ORDERS_URL}${queryParams}`;
     dispatch(fetchOrdersStart());
     axios.get(url)
       .then(res => {
