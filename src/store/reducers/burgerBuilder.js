@@ -1,5 +1,5 @@
 import * as actionTypes from '../actions/actionTypes';
-import {updateObject} from '../utility';
+import {updateObject} from '../../shared/utility';
 
 const initialState = {
   ingredients: null,
@@ -58,7 +58,9 @@ const setIngredients = (state, action) => {
   });
 };
 
-const fetchIngredientsFailed = (state, action) => updateObject(state, {error: true});
+const fetchIngredientsFailed = (state, action) => {
+  return updateObject(state, {error: true});
+};
 
 const burgerBuilder = (state = initialState, action) => {
   switch (action.type) {
